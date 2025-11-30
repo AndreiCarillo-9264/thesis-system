@@ -11,9 +11,9 @@
 
 ## 👥 Team Members
 
-🔹 Carillo, Andrei Christopher  
-🔹 Nebreja, Brad Josh
-🔹 Prades, Justine James  
+-  Carillo, Andrei Christopher  
+-  Nebreja, Brad Josh
+-  Prades, Justine James  
 
 ---
 
