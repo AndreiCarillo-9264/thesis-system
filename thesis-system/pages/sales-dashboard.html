@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPC Nexboard - Sales Dashboard</title>
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="../assets/images/system-logo.webp" alt="CPC Logo" class="system-logo">
+            <h1 class="system-name">CPC Nexboard</h1>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link"><img src="../assets/vendor/boxicons/svg/basic/bx-grid-column-right.svg" width="24" height="24" alt=""> Dashboard</a>
+            <a href="#" class="nav-link active"><img src="../assets/vendor/boxicons/svg/basic/bx-cart.svg" width="24" height="24" alt=""> Sales</a>
+            <a href="production-dashboard.html" class="nav-link"><img src="../assets/vendor/boxicons/svg/basic/bx-factory.svg" width="24" height="24" alt=""> Production</a>
+            <a href="inventory-dashboard.html" class="nav-link"><img src="../assets/vendor/boxicons/svg/basic/bx-box.svg" width="24" height="24" alt=""> Inventory</a>
+            <a href="logistics-dashboard.html" class="nav-link"><img src="../assets/vendor/boxicons/svg/basic/bx-truck.svg" width="24" height="24" alt=""> Logistics</a>
+            <a href="admin-dashboard.html" class="nav-link"><img src="../assets/vendor/boxicons/svg/basic/bx-cog.svg" width="24" height="24" alt=""> Admin Panel</a>
+
+            <hr>
+
+            <a href="#" class="nav-link"><img src="../assets/vendor/boxicons/svg/basic/bx-message-circle-question-mark.svg" width="24" height="24" alt=""> AI Assistant</a>
+            <a href="#" class="nav-link"><img src="../assets/vendor/boxicons/svg/basic/bx-arrow-out-right-square-half.svg" width="24" height="24" alt=""> Sign Out</a>
+        </nav>
+    </aside>
+
+    <section class="main-content">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-4">
+                <div></div>
+                <div class="d-flex align-items-center gap-4">
+                    <a href="#" class="text-dark">
+                        <img src="../assets/vendor/boxicons/svg/basic/bx-bell.svg" width="24" height="24" alt="Notifications">
+                    </a>
+                    <a href="#" class="text-dark">
+                        <img src="../assets/vendor/boxicons/svg/basic/bx-user.svg" width="40" height="40" alt="Profile"
+                             style="border-radius:50%; border:2px solid #ddd; object-fit:cover;">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid py-5 px-4">
+            <div class="card page-header-card mb-4">
+                <div class="card-body">
+                    <img src="../assets/vendor/boxicons/svg/basic/bx-cart.svg" width="64" height="64" alt="Sales">
+                    <div>
+                        <h2>Sales Dashboard</h2>
+                        <p>Sales monitoring, order tracking, and revenue analytics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-3">
+                    <div class="stats-card">
+                        <h5>Total Sales</h5>
+                        <h2>-----</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="stats-card">
+                        <h5>Active Orders</h5>
+                        <h2>-----</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="stats-card">
+                        <h5>Active Customers</h5>
+                        <h2>-----</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="stats-card">
+                        <h5>Revenue Growth</h5>
+                        <h2>-----</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="section-card-header">
+                    <div>
+                        <h3>Recent Orders</h3>
+                        <p>Latest customer orders and their current status</p>
+                    </div>
+                </div>
+                <div class="section-card-body">
+                    <p class="text-muted text-center pt-5">
+                        No sales to display yet.<br>
+                        <small>Sales will appear here in real-time when available.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
