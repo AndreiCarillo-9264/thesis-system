@@ -32,308 +32,118 @@
     </aside>
 
     <section class="main-content">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid px-4">
-                <div></div>
+        <nav class="navbar fixed-top">
+            <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+                <div class="navbar-page-header">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="../assets/vendor/boxicons/svg/basic/bx-cart.svg" width="48" height="48" alt="Admin">
+                        <div>
+                            <h2 class="mb-0">Sales Dashboard</h2>
+                            <p class="mb-0 text-muted small">Sales monitoring, order tracking, and revenue analytics</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="d-flex align-items-center gap-4">
                     <a href="#" class="text-dark">
                         <img src="../assets/vendor/boxicons/svg/basic/bx-bell.svg" width="24" height="24" alt="Notifications">
                     </a>
                     <a href="#" class="text-dark">
-                        <img src="../assets/vendor/boxicons/svg/basic/bx-user.svg" width="40" height="40" alt="Profile"
+                        <img src="../assets/vendor/boxicons/svg/basic/bx-user.svg" width="36" height="36" alt="Profile"
                              style="border-radius:50%; border:2px solid #ddd; object-fit:cover;">
                     </a>
                 </div>
             </div>
         </nav>
 
-        <div class="container-fluid py-5 px-4">
-            <div class="card page-header-card mb-4">
-                <div class="card-body">
-                    <img src="../assets/vendor/boxicons/svg/basic/bx-cart.svg" width="64" height="64" alt="Sales">
-                    <div>
-                        <h2>Sales Dashboard</h2>
-                        <p>Sales monitoring, order tracking, and revenue analytics</p>
+        <div class="content-wrapper">
+            <div class="container-fluid px-4 pt-4">
+                <div class="row g-4 mb-4">
+                    <div class="col-md-4 col-lg-3">
+                        <div class="stats-card">
+                            <h5>Total Sales</h5>
+                            <h2>-----</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="stats-card">
+                            <h5>Active Orders</h5>
+                            <h2>-----</h2>
+                         </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="stats-card">
+                            <h5>Active Customers</h5>
+                            <h2>-----</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3">
+                        <div class="stats-card">
+                            <h5>Revenue Growth</h5>
+                            <h2>-----</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row g-4">
-                <div class="col-md-4 col-lg-3">
-                    <div class="stats-card">
-                        <h5>Total Sales</h5>
-                        <h2>-----</h2>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-3">
-                    <div class="stats-card">
-                        <h5>Active Orders</h5>
-                        <h2>-----</h2>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-3">
-                    <div class="stats-card">
-                        <h5>Active Customers</h5>
-                        <h2>-----</h2>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-3">
-                    <div class="stats-card">
-                        <h5>Revenue Growth</h5>
-                        <h2>-----</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-card">
-                <div class="section-card-header d-flex justify-content-between align-items-start flex-wrap gap-3">
-                    <div>
-                        <h3>Recent Orders</h3>
-                        <p>Latest customer orders and their current status</p>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <button id="btn-generate-report" class="btn btn-outline-secondary d-flex align-items-center gap-2 px-3">
-                            <img src="../assets/vendor/boxicons/svg/basic/bx-file.svg" width="18" height="18" alt="Report">
-                            Generate Report
-                        </button>
-                        <button id="btn-new-order" class="btn btn-primary d-flex align-items-center gap-2 px-3" style="background-color: var(--color-primary); border-color: var(--color-primary);">
-                            <img src="../assets/vendor/boxicons/svg/basic/bx-plus.svg" width="18" height="18" alt="New Order">
-                            New Order
-                        </button>
-                    </div>
-                </div>
-                <div class="section-card-body">
-                    <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center mb-3">
-                        <div class="flex-grow-1" style="min-width: 240px;">
-                            <div class="input-group">
-                                <span class="input-group-text bg-white border-end-0">
-                                    <img src="../assets/vendor/boxicons/svg/basic/bx-search.svg" width="18" height="18" alt="Search">
-                                </span>
-                                <input type="text" class="form-control border-start-0" placeholder="Search orders..." aria-label="Search orders">
+                <div class="section-card flex-fill">
+                    <div class="section-card-body">
+                        <div class="tab-content active" id="user-management">
+                            <div class="tab-content-header">
+                                <h3>Sales Management</h3>
+                                <div class="d-flex align-items-center gap-2">
+                                    <button id="btn-generate-report" class="btn btn-outline-secondary d-flex align-items-center gap-2 px-3">
+                                        <img src="../assets/vendor/boxicons/svg/basic/bx-file.svg" width="18" height="18" alt="Report">
+                                            Generate Report
+                                    </button>
+                                    <button id="btn-new-order" class="btn btn-primary d-flex align-items-center gap-2 px-3" style="background-color: var(--color-primary); border-color: var(--color-primary);">
+                                        <img src="../assets/vendor/boxicons/svg/basic/bx-plus.svg" width="18" height="18" alt="New Order">
+                                            New Order
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="table-responsive mt-4">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>User ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Department</th>
+                                            <th>Status</th>
+                                            <th>Last Login</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="8" class="text-center text-muted py-5">
+                                                No sales to display yet.
+                                                <small>Sales will appear here in real-time when available.</small>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div>
-                            <select class="form-select" style="min-width: 160px;">
-                                <option selected>All Statuses</option>
-                                <option>In Production</option>
-                                <option>Pending</option>
-                                <option>Completed</option>
-                                <option>Delayed</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="table-responsive">
-                        <table class="admin-table w-100 mb-0">
-                            <thead>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Customer</th>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Total Amount</th>
-                                    <th>Order Status</th>
-                                    <th>Production Status</th>
-                                    <th>Due Date</th>
-                                    <th>Sales Rep</th>
-                                </tr>
-                            </thead>
-                            <!-- <tbody> 
-                                <tr>
-                                    <td>ORD-1045</td>
-                                    <td>Northwind Builders</td>
-                                    <td>Steel Beams</td>
-                                    <td>120</td>
-                                    <td>$48,200</td>
-                                    <td><span class="badge bg-warning text-dark">Pending</span></td>
-                                    <td>Not Started</td>
-                                    <td>Feb 12, 2026</td>
-                                    <td>A. Rivera</td>
-                                </tr>
-                                <tr>
-                                    <td>ORD-1044</td>
-                                    <td>Horizon Manufacturing</td>
-                                    <td>Custom Panels</td>
-                                    <td>350</td>
-                                    <td>$86,000</td>
-                                    <td><span class="badge bg-info text-dark">In Production</span></td>
-                                    <td>Phase 2</td>
-                                    <td>Feb 05, 2026</td>
-                                    <td>M. Chen</td>
-                                </tr>
-                                <tr>
-                                    <td>ORD-1043</td>
-                                    <td>Evergreen Retail</td>
-                                    <td>Display Units</td>
-                                    <td>75</td>
-                                    <td>$21,450</td>
-                                    <td><span class="badge bg-success">Completed</span></td>
-                                    <td>QA Passed</td>
-                                    <td>Jan 28, 2026</td>
-                                    <td>L. Gomez</td>
-                                </tr>
-                                <tr>
-                                    <td>ORD-1042</td>
-                                    <td>Atlas Logistics</td>
-                                    <td>Pallet Systems</td>
-                                    <td>200</td>
-                                    <td>$34,750</td>
-                                    <td><span class="badge bg-secondary">On Hold</span></td>
-                                    <td>Awaiting Specs</td>
-                                    <td>Feb 03, 2026</td>
-                                    <td>D. Patel</td>
-                                </tr>
-                                <tr>
-                                    <td>ORD-1041</td>
-                                    <td>Summit Foods</td>
-                                    <td>Cold Storage Racks</td>
-                                    <td>95</td>
-                                    <td>$52,900</td>
-                                    <td><span class="badge bg-danger">Delayed</span></td>
-                                    <td>Materials Late</td>
-                                    <td>Jan 30, 2026</td>
-                                    <td>J. Smith</td>
-                                </tr>
-                            </tbody> -->
-                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Generate Report Modal -->
-    <div id="modal-generate-report" class="modal-overlay d-none">
-        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-report-title">
-            <div class="modal-header">
-                <div>
-                    <h4 id="modal-report-title" class="modal-title">Generate Sales Report</h4>
-                    <p class="modal-subtitle">Configure report parameters and generate sales analytics</p>
-                </div>
-            </div>
-            <div class="modal-body">
-                <form class="modal-form">
-                    <div class="form-group">
-                        <label class="form-label">Report Type *</label>
-                        <select class="form-select" required>
-                            <option selected>Sales Summary</option>
-                            <option>Revenue Breakdown</option>
-                            <option>Customer Performance</option>
-                            <option>Order Status</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Start Date *</label>
-                        <input type="date" class="form-control" placeholder="dd/mm/yyyy" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">End Date *</label>
-                        <input type="date" class="form-control" placeholder="dd/mm/yyyy" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Format *</label>
-                        <select class="form-select" required>
-                            <option selected>PDF</option>
-                            <option>CSV</option>
-                            <option>XLSX</option>
-                        </select>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-light" data-close-modal="modal-generate-report">Cancel</button>
-                        <button type="button" class="btn btn-primary" style="background-color: var(--color-primary); border-color: var(--color-primary);">
-                            Generate Report
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- New Order Modal -->
-    <div id="modal-new-order" class="modal-overlay d-none">
-        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-order-title">
-            <div class="modal-header">
-                <div>
-                    <h4 id="modal-order-title" class="modal-title">Create New Sales Order</h4>
-                    <p class="modal-subtitle">Enter the details for the new sales order</p>
-                </div>
-            </div>
-            <div class="modal-body">
-                <form class="modal-form">
-                    <div class="form-group">
-                        <label class="form-label">Customer *</label>
-                        <input type="text" class="form-control" placeholder="Enter customer name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Product *</label>
-                        <input type="text" class="form-control" placeholder="Enter product name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Quantity *</label>
-                        <input type="number" class="form-control" placeholder="Enter quantity" min="0" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Unit Price *</label>
-                        <input type="number" class="form-control" placeholder="Enter unit price" min="0" step="0.01" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Due Date *</label>
-                        <input type="date" class="form-control" placeholder="dd/mm/yyyy" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Sales Representative *</label>
-                        <input type="text" class="form-control" placeholder="Enter sales rep name" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Priority *</label>
-                        <select class="form-select" required>
-                            <option selected>High</option>
-                            <option>Medium</option>
-                            <option>Low</option>
-                        </select>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-light" data-close-modal="modal-new-order">Cancel</button>
-                        <button type="button" class="btn btn-primary" style="background-color: var(--color-primary); border-color: var(--color-primary);">
-                            Create Order
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Simple modal toggles for static page
-        const modals = {
-            report: document.getElementById('modal-generate-report'),
-            order: document.getElementById('modal-new-order'),
-        };
-
-        document.getElementById('btn-generate-report')?.addEventListener('click', () => {
-            modals.report.classList.remove('d-none');
-        });
-
-        document.getElementById('btn-new-order')?.addEventListener('click', () => {
-            modals.order.classList.remove('d-none');
-        });
-
-        // Close on backdrop click
-        Object.values(modals).forEach((modal) => {
-            modal?.addEventListener('click', (e) => {
-                if (e.target === modal) modal.classList.add('d-none');
-            });
-        });
-
-        // Close on cancel buttons
-        document.querySelectorAll('[data-close-modal]').forEach((btn) => {
-            btn.addEventListener('click', () => {
-                const target = btn.getAttribute('data-close-modal');
-                document.getElementById(target)?.classList.add('d-none');
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.dataset.tab;
+                    document.querySelectorAll('.admin-tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById(tab).classList.add('active');
+                });
             });
         });
     </script>
-
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
