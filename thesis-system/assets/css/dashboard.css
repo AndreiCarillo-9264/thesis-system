@@ -227,7 +227,7 @@ body {
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 6px;
-  background-color: var(--color-primary);
+  background-color: var(--accent-color, var(--color-primary));
 }
 
 .stats-card h5 {
@@ -434,6 +434,31 @@ body {
 /* ========================
    Responsive Adjustments
    ======================== */
+/* Alert Card */
+.alert-card {
+  background-color: #fff5f5;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #dc3545;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  min-width: 280px;
+  max-width: 350px;
+}
+
+.alert-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alert-item {
+  font-size: var(--font-size-sm);
+  color: #991b1b;
+  padding: 0.5rem;
+  background-color: #fee2e2;
+  border-radius: 4px;
+}
+
 @media (max-width: 1400px) {
   .sidebar { width: 240px; }
   .main-content, .navbar { left: 240px; margin-left: 240px; }
