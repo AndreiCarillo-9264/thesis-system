@@ -267,4 +267,3 @@ export const NewOrderModal = ({
 // Example usage (pseudo):
 // const [showReport, setShowReport] = useState(false);
 // <GenerateReportModal open={showReport} onClose={() => setShowReport(false)} />;
-
