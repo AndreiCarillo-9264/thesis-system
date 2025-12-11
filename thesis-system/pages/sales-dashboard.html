@@ -86,17 +86,117 @@
             </div>
 
             <div class="section-card">
-                <div class="section-card-header">
+                <div class="section-card-header d-flex justify-content-between align-items-start flex-wrap gap-3">
                     <div>
                         <h3>Recent Orders</h3>
                         <p>Latest customer orders and their current status</p>
                     </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-outline-secondary d-flex align-items-center gap-2 px-3">
+                            <img src="../assets/vendor/boxicons/svg/basic/bx-file.svg" width="18" height="18" alt="Report">
+                            Generate Report
+                        </button>
+                        <button class="btn btn-primary d-flex align-items-center gap-2 px-3" style="background-color: var(--color-primary); border-color: var(--color-primary);">
+                            <img src="../assets/vendor/boxicons/svg/basic/bx-plus.svg" width="18" height="18" alt="New Order">
+                            New Order
+                        </button>
+                    </div>
                 </div>
                 <div class="section-card-body">
-                    <p class="text-muted text-center pt-5">
-                        No sales to display yet.<br>
-                        <small>Sales will appear here in real-time when available.</small>
-                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-between align-items-center mb-3">
+                        <div class="flex-grow-1" style="min-width: 240px;">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <img src="../assets/vendor/boxicons/svg/basic/bx-search.svg" width="18" height="18" alt="Search">
+                                </span>
+                                <input type="text" class="form-control border-start-0" placeholder="Search orders..." aria-label="Search orders">
+                            </div>
+                        </div>
+                        <div>
+                            <select class="form-select" style="min-width: 160px;">
+                                <option selected>All Statuses</option>
+                                <option>In Production</option>
+                                <option>Pending</option>
+                                <option>Completed</option>
+                                <option>Delayed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table w-100 mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Total Amount</th>
+                                    <th>Order Status</th>
+                                    <th>Production Status</th>
+                                    <th>Due Date</th>
+                                    <th>Sales Rep</th>
+                                </tr>
+                            </thead>
+                            <!-- <tbody> 
+                                <tr>
+                                    <td>ORD-1045</td>
+                                    <td>Northwind Builders</td>
+                                    <td>Steel Beams</td>
+                                    <td>120</td>
+                                    <td>$48,200</td>
+                                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                    <td>Not Started</td>
+                                    <td>Feb 12, 2026</td>
+                                    <td>A. Rivera</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD-1044</td>
+                                    <td>Horizon Manufacturing</td>
+                                    <td>Custom Panels</td>
+                                    <td>350</td>
+                                    <td>$86,000</td>
+                                    <td><span class="badge bg-info text-dark">In Production</span></td>
+                                    <td>Phase 2</td>
+                                    <td>Feb 05, 2026</td>
+                                    <td>M. Chen</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD-1043</td>
+                                    <td>Evergreen Retail</td>
+                                    <td>Display Units</td>
+                                    <td>75</td>
+                                    <td>$21,450</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                    <td>QA Passed</td>
+                                    <td>Jan 28, 2026</td>
+                                    <td>L. Gomez</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD-1042</td>
+                                    <td>Atlas Logistics</td>
+                                    <td>Pallet Systems</td>
+                                    <td>200</td>
+                                    <td>$34,750</td>
+                                    <td><span class="badge bg-secondary">On Hold</span></td>
+                                    <td>Awaiting Specs</td>
+                                    <td>Feb 03, 2026</td>
+                                    <td>D. Patel</td>
+                                </tr>
+                                <tr>
+                                    <td>ORD-1041</td>
+                                    <td>Summit Foods</td>
+                                    <td>Cold Storage Racks</td>
+                                    <td>95</td>
+                                    <td>$52,900</td>
+                                    <td><span class="badge bg-danger">Delayed</span></td>
+                                    <td>Materials Late</td>
+                                    <td>Jan 30, 2026</td>
+                                    <td>J. Smith</td>
+                                </tr>
+                            </tbody> -->
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
