@@ -53,7 +53,7 @@
                     <img src="../assets/vendor/boxicons/svg/basic/bx-cog.svg" width="64" height="64" alt="Admin">
                     <div>
                         <h2>System Administration</h2>
-                        <p>System monitoring, user management, and security oversight</p>
+                        <p>Manage users, permissions, and monitor system health</p>
                     </div>
                 </div>
             </div>
@@ -73,13 +73,13 @@
                 </div>
                 <div class="col-md-4 col-lg-3">
                     <div class="stats-card">
-                        <h5>Data Storage</h5>
+                        <h5>Database Size</h5>
                         <h2>-----</h2>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3">
                     <div class="stats-card">
-                        <h5>Security Alerts</h5>
+                        <h5>Active Sessions</h5>
                         <h2>-----</h2>
                     </div>
                 </div>
@@ -88,20 +88,128 @@
             <div class="section-card">
                 <div class="section-card-header">
                     <div>
-                        <h3>Recent User Activities</h3>
-                        <p>Latest system activities across all departments</p>
+                        <h3>System Administration</h3>
+                        <p>Manage users, permissions, and monitor system health</p>
                     </div>
                 </div>
+                
+                <!-- Tab Navigation -->
+                <div class="admin-tabs">
+                    <button class="admin-tab-btn active" data-tab="user-management">
+                        User Management
+                    </button>
+                    <button class="admin-tab-btn" data-tab="permissions">
+                        Permissions
+                    </button>
+                    <button class="admin-tab-btn" data-tab="activity-logs">
+                        Activity Logs
+                    </button>
+                    <button class="admin-tab-btn" data-tab="system-settings">
+                        System Settings
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
                 <div class="section-card-body">
-                    <p class="text-muted text-center pt-5">
-                        No active users to display yet.<br>
-                        <small>Active users will appear here in real-time when available.</small>
-                    </p>
+                    <!-- User Management Tab -->
+                    <div class="tab-content active" id="user-management">
+                        <div class="tab-content-header">
+                            <h3>User Management</h3>
+                            <button class="btn-add-user">
+                                <img src="../assets/vendor/boxicons/svg/basic/bx-plus.svg" width="20" height="20" alt="Add">
+                                Add User
+                            </button>
+                        </div>
+                        <div class="table-responsive mt-4">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>User ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Department</th>
+                                        <th>Status</th>
+                                        <th>Last Login</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="8" class="text-center text-muted py-5">
+                                            No users to display yet.<br>
+                                            <small>Users will appear here when added to the system.</small>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Permissions Tab -->
+                    <div class="tab-content" id="permissions">
+                        <div class="tab-content-header">
+                            <h3>Permissions</h3>
+                        </div>
+                        <div class="permissions-content mt-4">
+                            <p class="text-muted text-center py-5">
+                                Permission management interface will be displayed here.<br>
+                                <small>Configure role-based access controls and permissions.</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Logs Tab -->
+                    <div class="tab-content" id="activity-logs">
+                        <div class="tab-content-header">
+                            <h3>Activity Logs</h3>
+                        </div>
+                        <div class="activity-logs-content mt-4">
+                            <p class="text-muted text-center py-5">
+                                No activity logs to display yet.<br>
+                                <small>System activities and user actions will appear here in real-time.</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- System Settings Tab -->
+                    <div class="tab-content" id="system-settings">
+                        <div class="tab-content-header">
+                            <h3>System Settings</h3>
+                        </div>
+                        <div class="system-settings-content mt-4">
+                            <p class="text-muted text-center py-5">
+                                System configuration options will be displayed here.<br>
+                                <small>Manage system preferences, security settings, and configurations.</small>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.admin-tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
