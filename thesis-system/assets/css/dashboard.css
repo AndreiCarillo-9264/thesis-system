@@ -1,22 +1,29 @@
+/* ========================
+   CPC Nexboard – Combined & Optimized Dashboard CSS
+   ======================== */
+
 :root {
-  /* Typography */
-  --font-size-xs:      0.75rem;    /* 12px */
-  --font-size-sm:      0.875rem;   /* 14px */
-  --font-size-base:    0.9375rem;  /* 15px */
-  --font-size-lg:      1.5rem;     /* 24px */
-  --font-size-xl:      1.75rem;    /* 28px */
-  --font-size-2xl:     2.25rem;    /* 36px */
+  /* ─────── Typography ─────── */
+  --font-size-xs:      0.75rem;     /* 12px */
+  --font-size-sm:      0.875rem;    /* 14px */
+  --font-size-base:    1rem;        /* 16px ← main body */
+  --font-size-md:      1.125rem;    /* 18px ← nav links */
+  --font-size-lg:      1.375rem;    /* 22px ← section titles */
+  --font-size-xl:      1.75rem;     /* 28px ← page title, system name */
+  --font-size-2xl:     2.125rem;    /* 34px ← stats numbers */
+  --font-size-3xl:     2.5rem;      /* 40px */
 
-  /* Spacing System */
-  --space-3xs: 0.25rem;
-  --space-2xs: 0.5rem;
-  --space-xs:  0.75rem;
-  --space-sm:  1rem;
-  --space-md:  1.5rem;
-  --space-lg:  2rem;
-  --space-xl:  3rem;
+  /* ─────── Spacing System ─────── */
+  --space-3xs: 0.25rem;  /* 4px  */
+  --space-2xs: 0.5rem;   /* 8px  */
+  --space-xs:  0.75rem;  /* 12px */
+  --space-sm:  1rem;     /* 16px */
+  --space-md:  1.5rem;   /* 24px */
+  --space-lg:  2.25rem;  /* 36px */
+  --space-xl:  3.5rem;   /* 56px */
+  --space-2xl: 5rem;   /* 80px */
 
-  /* Color Palette */
+  /* ─────── Colors ─────── */
   --color-primary:       #A56B55;
   --color-primary-dark:  #633627;
   --color-primary-light: #D9B8A9;
@@ -27,6 +34,13 @@
   --color-text-muted:    #666666;
   --color-border:        #cccccc;
   --color-hr:            #aaaaaa;
+
+  /* ─────── Extras ─────── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --transition: all 0.25s ease;
 }
 
 *, *::before, *::after {
@@ -39,10 +53,14 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
   min-height: 100vh;
-  line-height: 1.5;
 }
 
+/* ========================
+   Sidebar
+   ======================== */
 .sidebar {
   width: 260px;
   height: 100vh;
@@ -54,7 +72,7 @@ body {
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 1030;
 }
 
 .sidebar-header {
@@ -72,11 +90,11 @@ body {
   width: 48px;
   height: 48px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
 }
 
 .system-name {
-  font-size: 1.55rem;
+  font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: -0.8px;
@@ -85,7 +103,7 @@ body {
 
 .sidebar-nav {
   flex: 1;
-  padding: var(--space-lg) 0;
+  padding: var(--space-sm) 0;
   overflow-y: auto;
 }
 
@@ -93,14 +111,14 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 0.85rem var(--space-lg);
+  padding: 0.9rem var(--space-lg);
   color: var(--color-text-light);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-md);
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.25s ease;
-  margin: 0 var(--space-sm);
-  border-radius: 8px;
+  transition: var(--transition);
+  margin: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-sm);
 }
 
 .nav-link img {
@@ -135,97 +153,70 @@ body {
   opacity: 0.8;
 }
 
-.main-content {
-  margin-left: 260px;
-  min-height: 100vh;
-  padding-top: var(--space-xl)
-}
-
+/* ========================
+   Top Navbar
+   ======================== */
 .navbar {
   position: fixed;
   top: 0;
   left: 260px;
   right: 0;
   height: 70px;
-  background-color: var(--color-white) !important;
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 900;
-}
-
-.page-title {
-  font-size: var(--font-size-2xl);
-  font-weight: 700;
-  color: var(--color-text);
-  margin: var(--space-lg) 0 var(--space-xl);
-}
-
-.card {
   background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  z-index: 1020;
 }
 
-.card h5 {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  font-weight: 600;
-  margin-bottom: var(--space-xs);
-}
-
-.card h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin: 0;
-}
-
-.page-header-card {
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
-  background-color: #f8f9fa;
-}
-
-.page-header-card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 6px;
-  background-color: var(--color-primary);
-}
-
-.page-header-card .card-body {
-  padding: 0.25rem 1rem;
+.navbar .container-fluid {
+  height: 100%;
+  padding: 0 var(--space-lg);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
 }
 
-.page-header-card h2 {
-  margin: 0;
-  font-size: var(--font-size-2xl);
+.navbar-page-header img {
+  width: 48px;
+  height: 48px;
+  filter: brightness(0) saturate(100%) hue-rotate(232deg) brightness(1.9);
+}
+
+.navbar-page-header h2 {
+  font-size: var(--font-size-xl);
   font-weight: 700;
-  color: #222222;
+  color: #222;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.page-header-card p {
-  margin: 0.15rem 0 0;
-  color: #666666;
-  font-size: 1rem;
-  font-weight: 500;
+.navbar-page-header p {
+  margin: 0.2rem 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
 }
 
+/* ========================
+   Main Content
+   ======================== */
+.main-content {
+  margin-left: 260px;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  margin-top: 70px;
+  padding: var(--space-lg) 0 var(--space-xl);
+}
+
+/* ========================
+   Stats Cards
+   ======================== */
 .stats-card {
   background-color: var(--color-white);
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -255,13 +246,17 @@ body {
   margin-left: 0.5rem;
 }
 
+/* ========================
+   Section Card (Recent Orders)
+   ======================== */
 .section-card {
   background-color: var(--color-white);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
   position: relative;
-  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-card::before {
@@ -273,135 +268,43 @@ body {
 }
 
 .section-card-header {
+  padding: 1.5rem var(--space-lg);
   background-color: #f8f8f5;
-  padding: 1.1rem 1.8rem;
   border-bottom: 1px solid #eee;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .section-card-header h3 {
-  font-size: 1.35rem;
+  font-size: var(--font-size-lg);
   font-weight: 700;
   color: #333;
   margin: 0;
 }
 
 .section-card-header p {
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   margin: 0.35rem 0 0;
-  font-weight: 500;
 }
 
 .section-card-body {
-  padding: 2rem;
-  min-height: 420px;
+  padding: var(--space-lg);
   background-color: #fcfcfc;
+  flex: 1;
 }
 
-/* Admin Tabs */
-.admin-tabs {
-  display: flex;
-  gap: 0;
-  background-color: #f8f8f5;
-  border-bottom: 1px solid #eee;
-  padding: 0 1.8rem;
-  margin: 0;
-}
-
-.admin-tab-btn {
-  background: none;
-  border: none;
-  padding: 1rem 1.5rem;
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  border-bottom: 3px solid transparent;
-  position: relative;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-}
-
-.admin-tab-btn:hover {
-  color: var(--color-primary-dark);
-  background-color: rgba(165, 107, 85, 0.05);
-}
-
-.admin-tab-btn.active {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
-  background-color: transparent;
-}
-
-/* Tab Content */
-.tab-content {
-  display: none;
-  animation: fadeIn 0.3s ease;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.tab-content-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.tab-content-header h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #333;
-  margin: 0;
-}
-
-.btn-add-user {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background-color: var(--color-text);
-  color: var(--color-white);
-  border: none;
-  border-radius: 8px;
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-}
-
-.btn-add-user:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.btn-add-user img {
-  filter: brightness(0) invert(1);
-}
-
-/* Admin Table */
+/* ========================
+   Table
+   ======================== */
 .admin-table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--color-white);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -416,7 +319,6 @@ body {
   font-weight: 600;
   color: var(--color-text);
   border-bottom: 2px solid #eee;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 .admin-table td {
@@ -424,7 +326,6 @@ body {
   font-size: var(--font-size-base);
   color: var(--color-text-light);
   border-bottom: 1px solid #f0f0f0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 .admin-table tbody tr:hover {
@@ -435,18 +336,9 @@ body {
   border-bottom: none;
 }
 
-@media (max-width: 1400px) {
-  .sidebar {
-    width: 240px;
-  }
-  .main-content,
-  .navbar {
-    margin-left: 240px;
-    left: 240px;
-  }
-}
-
-/* Modal (React components) */
+/* ========================
+   Modals
+   ======================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -458,10 +350,14 @@ body {
   z-index: 2000;
 }
 
+.modal-overlay.d-none {
+  display: none;
+}
+
 .modal-panel {
   width: min(560px, 100%);
   background: var(--color-white);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
   border: 1px solid #e7e7e7;
   overflow: hidden;
@@ -473,17 +369,15 @@ body {
 }
 
 .modal-title {
-  margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-text);
+  margin: 0;
 }
 
 .modal-subtitle {
   margin: 0.25rem 0 0;
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
-  font-weight: 500;
 }
 
 .modal-body {
@@ -493,16 +387,16 @@ body {
 
 .modal-form {
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
 }
 
-.modal-form .form-group {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
 
-.modal-form .form-label {
+.form-label {
   font-weight: 600;
   color: var(--color-text);
   font-size: var(--font-size-base);
@@ -512,9 +406,43 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 0.75rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .modal-actions .btn {
   min-width: 120px;
+  padding: 0.6rem 1.2rem;
+}
+
+/* ========================
+   Buttons & Inputs
+   ======================== */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+}
+
+.input-group .input-group-text {
+  background-color: white;
+}
+
+/* ========================
+   Responsive Adjustments
+   ======================== */
+@media (max-width: 1400px) {
+  .sidebar { width: 240px; }
+  .main-content, .navbar { left: 240px; margin-left: 240px; }
+}
+
+@media (max-width: 992px) {
+  .sidebar { width: 80px; }
+  .system-name, .nav-link span { display: none; }
+  .main-content, .navbar { left: 80px; margin-left: 80px; }
+  .navbar-page-header { gap: 0.75rem; }
+  .navbar-page-header h2 { font-size: 1.5rem; }
 }
